@@ -11,6 +11,7 @@
 <body>
     <header class="cabecalho">
         <img src="./assets/logoprincipal.png" alt="logo logmine">
+
         <nav class="cabecalho__menu" aria-label="Menu principal">
             <a href="#">ENTRAR</a>
             <a href="#">FORUM</a>
@@ -18,7 +19,23 @@
             <a href="#">MOJANG</a>
             <a href="#">PERGUNTAS</a>
         </nav>
+
+        <button class="cabecalho__toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            ☰
+        </button>
     </header>
+
+    <div class="menu-lateral" id="menuLateral" aria-hidden="true">
+        <div class="menu-lateral__painel">
+            <button class="menu-lateral__fechar" type="button" aria-label="Fechar menu">✕</button>
+
+            <a href="#">ENTRAR</a>
+            <a href="#">FORUM</a>
+            <a href="#">SOBRE</a>
+            <a href="#">MOJANG</a>
+            <a href="#">PERGUNTAS</a>
+        </div>
+    </div>
     <main>
         <section class="login">
             <img class="logo" src="./assets/logo-sozinho.png" alt="logo logmine">
