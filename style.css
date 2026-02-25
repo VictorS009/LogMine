@@ -1,406 +1,428 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
+  --color-text: #ffffff;
+  --color-brand: #269e6d;
 
-    --color-text: #ffffff;
-    --color-brand: #269e6d;
+  --color-dark-10: #262626;
+  --color-dark-20: #414141;
+  --color-dark-30: #737373;
 
-    --color-dark-10: #262626;
-    --color-dark-20: #414141;
-    --color-dark-30: #737373;
+  --glass-bg: rgba(0, 0, 0, 0.45);
+  --overlay-bg: rgba(0, 0, 0, 0.55);
 
-    --glass-bg: rgba(0, 0, 0, 0.45);
-    --overlay-bg: rgba(0, 0, 0, 0.55);
+  --border-weak: 1px solid rgba(255, 255, 255, 0.12);
+  --border-strong: 1px solid rgba(255, 255, 255, 0.20);
 
-    --border-weak: 1px solid rgba(255, 255, 255, 0.12);
-    --border-strong: 1px solid rgba(255, 255, 255, 0.20);
+  --font-display: "Kufam", sans-serif;
+  --font-body: "Inter", sans-serif;
 
-    --font-display: "Kufam", sans-serif;
-    --font-body: "Inter", sans-serif;
+  --fs-label: 14px;
+  --fs-input: 14px;
+  --fs-button: 20px;
+  --fs-footer: 18px;
 
-    --fs-label: 14px;
-    --fs-input: 14px;
-    --fs-button: 20px;
-    --fs-footer: 18px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
 
-    --radius-sm: 6px;
-    --radius-md: 12px;
-    --radius-lg: 10px;
+  --container: 1216px;
+  --card-w: 456px;
+  --field-w: 376px;
+  --field-h: 48px;
 
-    --container: 1216px;
-    --card-w: 456px;
-    --field-w: 376px;
-    --field-h: 48px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 60px;
 
-    --space-1: 8px;
-    --space-2: 12px;
-    --space-3: 16px;
-    --space-4: 20px;
-    --space-5: 24px;
-    --space-6: 32px;
-    --space-7: 40px;
-    --space-8: 48px;
-    --space-9: 60px;
+  --t-fast: 0.2s;
+  --t-med: 0.3s;
+  --ease: ease;
 
-    --t-fast: 0.2s;
-    --t-med: 0.3s;
-    --ease: ease;
-
-    --bg-grad-a: rgba(18, 18, 18, 0.6);
-    --bg-grad-b: rgba(18, 18, 18, 0.3);
-    --bg-image: url("./assets/background.png");
+  --bg-grad-a: rgba(18, 18, 18, 0.6);
+  --bg-grad-b: rgba(18, 18, 18, 0.3);
+  --bg-image: url("./assets/background.png");
 }
 
 body {
-    min-height: 100vh;
-    color: var(--color-text);
-
-    background:
-        linear-gradient(to bottom, var(--bg-grad-a), var(--bg-grad-b)),
-        var(--bg-image);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  min-height: 100vh;
+  color: var(--color-text);
+  background:
+    linear-gradient(to bottom, var(--bg-grad-a), var(--bg-grad-b)),
+    var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 main {
-    max-width: var(--container);
-    margin: 0 auto;
-    min-height: 657px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  max-width: var(--container);
+  margin: 0 auto;
+  min-height: 657px; /* desktop ok */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* =========================
+   HEADER
+========================= */
 .cabecalho {
-    font-family: var(--font-display);
-    font-weight: 600;
+  font-family: var(--font-display);
+  font-weight: 600;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    gap: var(--space-8);
-    padding-top: var(--space-5);
+  gap: var(--space-8);
+  padding-top: var(--space-5);
 }
 
 .cabecalho__menu a {
-    color: var(--color-text);
-    text-decoration: none;
+  color: var(--color-text);
+  text-decoration: none;
 
-    padding: 10px 32px;
-    border-radius: var(--radius-sm);
+  padding: 10px 32px;
+  border-radius: var(--radius-sm);
 
-    transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
 }
 
 .cabecalho__menu a:hover {
-    background: #ffffff;
-    color: var(--color-brand);
+  background: #ffffff;
+  color: var(--color-brand);
 }
 
+/* =========================
+   LOGIN
+========================= */
 .login {
-    width: var(--card-w);
-    max-width: calc(100vw - var(--space-6));
-    padding: var(--space-5);
+  width: var(--card-w);
+  max-width: calc(100vw - var(--space-6));
+  padding: var(--space-5);
 
-    background: var(--glass-bg);
-    border: var(--border-weak);
-    border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  border: var(--border-weak);
+  border-radius: var(--radius-md);
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .logo {
-    width: 32px;
-    height: 34px;
-
-    align-self: center;
-    margin-bottom: var(--space-5);
+  width: 32px;
+  height: 34px;
+  align-self: center;
+  margin-bottom: var(--space-5);
 }
 
 .login__form {
-    width: 100%;
-    max-width: var(--field-w);
+  width: 100%;
+  max-width: var(--field-w);
 
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 
-    align-self: center;
+  align-self: center;
 }
 
 .login__form label {
-    width: 100%;
-    font-family: var(--font-body);
-    font-size: var(--fs-label);
-    color: var(--color-text);
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  color: var(--color-text);
 }
 
 .login__form input[type="email"],
 .login__form input[type="password"],
 .login__form input[type="text"] {
-    width: 100%;
-    height: var(--field-h);
-    padding: 0 var(--space-2);
+  width: 100%;
+  height: var(--field-h);
+  padding: 0 var(--space-2);
 
-    appearance: none;
-    -webkit-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
 
-    background: var(--color-dark-10);
-    color: var(--color-text);
+  background: var(--color-dark-10);
+  color: var(--color-text);
 
-    border: var(--border-weak);
-    border-radius: var(--radius-sm);
+  border: var(--border-weak);
+  border-radius: var(--radius-sm);
+  outline: none;
 
-    outline: none;
-
-    font-family: var(--font-body);
-    font-size: var(--fs-input);
+  font-family: var(--font-body);
+  font-size: var(--fs-input);
 }
 
 .login__form input[type="email"]:focus,
 .login__form input[type="password"]:focus,
 .login__form input[type="text"]:focus {
-    border-color: rgba(38, 158, 109, 0.7);
+  border-color: rgba(38, 158, 109, 0.7);
 }
 
-
 .login__form label:has(input[type="checkbox"]) {
-    display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 12px;
 }
 
 input[type="checkbox"] {
-    accent-color: var(--color-brand);
+  accent-color: var(--color-brand);
 }
 
-
+/* mostrar senha */
 .senha-container {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .senha-container input {
-    padding-right: 48px;
+  padding-right: 48px;
 }
 
 .mostrar-senha {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 
-    background: transparent;
-    border: 0;
-    cursor: pointer;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 
-    color: var(--color-text);
-    font-size: 18px;
-    line-height: 1;
+  color: var(--color-text);
+  font-size: 18px;
+  line-height: 1;
 }
 
-
+/* botão entrar */
 .entrar {
-    width: 100%;
-    max-width: var(--field-w);
-    min-height: var(--field-h);
+  width: 100%;
+  max-width: var(--field-w);
+  min-height: var(--field-h);
 
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-sm);
-    border: var(--border-strong);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: var(--border-strong);
 
-    background: var(--color-brand);
-    color: var(--color-text);
+  background: var(--color-brand);
+  color: var(--color-text);
 
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: var(--fs-button);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-button);
 
-    cursor: pointer;
-    white-space: nowrap;
+  cursor: pointer;
+  white-space: nowrap;
 
-    align-self: center;
+  align-self: center;
 
-    transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+  transition: filter var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 
 .entrar:hover {
-    filter: brightness(1.05);
+  filter: brightness(1.05);
 }
 
 .entrar:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }
 
 .esqueceu {
-    margin-top: var(--space-8);
-    align-self: center;
+  margin-top: var(--space-8);
+  align-self: center;
 
-    text-decoration: none;
-    color: var(--color-brand);
+  text-decoration: none;
+  color: var(--color-brand);
 
-    font-family: var(--font-body);
-    font-weight: 500;
+  font-family: var(--font-body);
+  font-weight: 500;
 }
 
+/* =========================
+   FOOTER
+========================= */
 .rodape__elementos {
-    margin-top: var(--space-7);
-    padding: 0;
-    list-style: none;
+  margin-top: var(--space-7);
+  padding: 0;
+  list-style: none;
 
-    display: flex;
-    justify-content: center;
-    gap: var(--space-9);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-9);
 }
 
 .rodape__elementos li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
 
-    text-align: center;
+  text-align: center;
 
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: var(--fs-footer);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-footer);
 }
 
-
+/* =========================
+   HAMBURGUER + SIDEBAR
+========================= */
 .cabecalho__toggle {
-    display: none;
-    background: transparent;
-    border: 0;
-    color: var(--color-text);
-    font-size: 28px;
-    cursor: pointer;
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--color-text);
+  font-size: 28px;
+  cursor: pointer;
 }
-
 
 .menu-lateral {
-    position: fixed;
-    inset: 0;
+  position: fixed;
+  inset: 0;
 
-    background: rgba(0, 0, 0, 0);
-    opacity: 0;
-    pointer-events: none;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
 
-    transition: opacity 0.25s var(--ease), background 0.25s var(--ease);
-    z-index: 999;
+  transition: opacity 0.25s var(--ease), background 0.25s var(--ease);
+  z-index: 999;
 }
 
-
 .menu-lateral__painel {
-    position: absolute;
-    top: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 
-    width: min(320px, 85vw);
-    height: 100%;
+  width: min(320px, 85vw);
+  height: 100%;
 
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
 
-    border-left: var(--border-weak);
-    padding: var(--space-5);
+  border-left: var(--border-weak);
+  padding: var(--space-5);
 
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    transform: translateX(100%);
-    transition: transform var(--t-med) var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  transform: translateX(100%);
+  transition: transform var(--t-med) var(--ease);
 }
 
 .menu-lateral__fechar {
-    align-self: flex-end;
-    background: transparent;
-    border: 0;
-    color: var(--color-text);
-    font-size: 24px;
-    cursor: pointer;
-    margin-bottom: var(--space-1);
+  align-self: flex-end;
+  background: transparent;
+  border: 0;
+  color: var(--color-text);
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: var(--space-1);
 }
 
 .menu-lateral__painel a {
-    color: var(--color-text);
-    text-decoration: none;
-    font-family: var(--font-display);
-    font-weight: 600;
-    padding: var(--space-2);
-    border-radius: 8px;
-    transition: background var(--t-fast) var(--ease);
+  color: var(--color-text);
+  text-decoration: none;
+
+  font-family: var(--font-display);
+  font-weight: 600;
+
+  padding: var(--space-2);
+  border-radius: 8px;
+
+  transition: background var(--t-fast) var(--ease);
 }
 
 .menu-lateral__painel a:hover {
-    background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.10);
 }
 
-
 .menu-lateral.ativo {
-    opacity: 1;
-    pointer-events: auto;
-    background: var(--overlay-bg);
+  opacity: 1;
+  pointer-events: auto;
+  background: var(--overlay-bg);
 }
 
 .menu-lateral.ativo .menu-lateral__painel {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 @media (max-width: 1024px) {
-    .cabecalho {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+  .cabecalho {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-        padding: var(--space-5) var(--space-5) 0;
-        gap: 0;
-    }
+    padding: var(--space-5) var(--space-5) 0;
+    gap: 0;
+  }
 
-    .cabecalho__menu {
-        display: none;
-    }
+  .cabecalho__menu {
+    display: none;
+  }
 
-    .cabecalho__toggle {
-        display: block;
-    }
+  .cabecalho__toggle {
+    display: block;
+  }
 
-    main {
-        min-height: calc(100vh - 120px);
-        padding: var(--space-5);
-    }
+  main {
+    min-height: auto;
+    padding: 40px 24px;
+  }
 
-    .login {
-        width: min(520px, 100%);
-    }
+  .login {
+    width: min(520px, 100%);
+  }
+
+  .rodape__elementos {
+    gap: 40px;
+  }
 }
 
-@media (max-width: 480px) {
-    .cabecalho {
-        padding: var(--space-3) var(--space-3) 0;
-    }
+@media (max-width: 800px) {
+  main {
+    min-height: auto;
+    max-width: 80%;
+    padding: 24px 16px;
+  }
 
-    .login {
-        padding: var(--space-4);
-        border-radius: var(--radius-lg);
-    }
+  .cabecalho {
+    padding: var(--space-3) var(--space-3) 0;
+  }
 
-    .login__form {
-        gap: var(--space-3);
-    }
+  .login {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
 
-    .entrar {
-        font-size: 18px;
-    }
+  .login__form {
+    max-width: 100%;
+  }
+
+  .entrar {
+    max-width: 100%;
+    font-size: 18px;
+  }
+
+  footer {
+    display: none;
+  }
 }
