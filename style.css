@@ -1,5 +1,211 @@
-* margin {
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
+:root {
+    --cor-texto: #FFFFFF;
+    --dark-30: #737373;
+    --dark-20: #414141;
+    --dark-10: #262626;
+    --brand-color: #269E6D;
+
+    --fonte-1: 'Kufam', sans-serif;
+    --fonte-2: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(to bottom, rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.3)),
+        url("./assets/background.png");
+    background-size: cover;
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cabecalho {
+    font-family: var(--fonte-1);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    padding-top: 24px;
+}
+
+.cabecalho__menu a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    padding: 10px 32px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.cabecalho__menu a:hover {
+    background: white;
+    color: var(--brand-color);
+    border-radius: 6px;
+}
+
+main {
+    max-width: 1216px;
+    margin: 0 auto;
+    min-height: 657px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 456px;
+    max-width: calc(100vw - 32px);
+    padding: 24px;
+}
+
+.logo {
+    width: 32px;
+    height: 34px;
+
+    align-self: center;
+    margin-bottom: 24px;
+}
+
+.entrar {
+    width: 100%;
+    max-width: 376px;
+    min-height: 48px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: var(--brand-color);
+    color: var(--cor-texto);
+    font-family: var(--fonte-1);
+    font-weight: 600;
+    font-size: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    align-self: center;
+}
+
+.login__form {
+    width: 100%;
+    max-width: 376px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: center;
+}
+
+.login__form label {
+    font-family: var(--fonte-2);
+    font-size: 14px;
+    width: 100%;
+    color: var(--cor-texto);
+}
+
+.login__form input[type="email"],
+.login__form input[type="password"],
+.login__form input[type="text"]{
+  appearance: none;
+  -webkit-appearance: none;
+
+  background: var(--dark-10);
+  color: var(--cor-texto);
+
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+
+  height: 48px;
+  line-height: 48px;       
+  padding: 0 12px;
+
+  font-family: var(--fonte-2);
+  font-size: 14px;
+}
+
+.login__form input[type="email"]:focus,
+.login__form input[type="password"]:focus {
+    border-color: rgba(38, 158, 109, 0.7);
+}
+
+.login__form label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--cor-texto);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--brand-color);
+}
+
+.senha-container {
+    position: relative;
+    width: 100%;
+}
+
+.senha-container input {
+    width: 100%;
+    padding-right: 48px;
+}
+
+.mostrar-senha {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.esqueceu {
+    text-decoration: none;
+    color: var(--brand-color);
+    font-family: var(--fonte-2);
+    font-weight: 500;
+
+    margin-top: 48px;
+    align-self: center;
+}
+
+.rodape__elementos {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.rodape__elementos li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    font-family: var(--fonte-1);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.cabecalho__menu a,
+.entrar {
+    transition: 0.5s;
+}

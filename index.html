@@ -9,40 +9,50 @@
 </head>
 
 <body>
-    <header>
+    <header class="cabecalho">
         <img src="./assets/logoprincipal.png" alt="logo logmine">
-       <nav aria-label="Menu principal">
-            <a href="">ENTRAR</a>
-            <a href="">FORUM</a>
-            <a href="">SOBRE</a>
-            <a href="">MOJANG</a>
-            <a href="">PERGUNTAS</a>
+        <nav class="cabecalho__menu" aria-label="Menu principal">
+            <a href="#">ENTRAR</a>
+            <a href="#">FORUM</a>
+            <a href="#">SOBRE</a>
+            <a href="#">MOJANG</a>
+            <a href="#">PERGUNTAS</a>
         </nav>
     </header>
     <main>
-        <section>
-            <img src="./assets/logo-sozinho.png" alt="logo logmine">
-            <form action="" method="get">
+        <section class="login">
+            <img class="logo" src="./assets/logo-sozinho.png" alt="logo logmine">
+
+            <form class="login__form" action="" method="get">
 
                 <label for="userEmail">E-mail</label>
                 <input type="email" id="userEmail" name="userEmail" required autocomplete="email">
-                <br>
+
                 <label for="userPassword">Senha</label>
-                <input type="password" id="userPassword" name="userPassword" required autocomplete="current-password">
-                <br>
-                <label>
+                <div class="senha-container">
+                    <input type="password" id="userPassword" name="userPassword" required minlength="8"
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+                        title="Mínimo 8 caracteres, com letra maiúscula, minúscula e número."
+                        autocomplete="current-password">
+                    <button type="button" class="mostrar-senha" aria-label="Mostrar senha">👁</button>
+                </div>
+
+
+
+                <label for="rememberPassword">
                     <input type="checkbox" id="rememberPassword" name="rememberPassword">
                     Lembrar minha senha
                 </label>
-                <button type="submit">Entrar na conta</button>
+
+                <button class="entrar" type="submit">Entrar na conta</button>
 
             </form>
 
-            <a href="#">Esqueceu a senha?</a>
+            <a class="esqueceu" href="#">Esqueceu a senha?</a>
         </section>
     </main>
-    <footer>
-        <ul>
+    <footer class="rodape">
+        <ul class="rodape__elementos">
             <li> <img src="./assets/Power.png" alt="Icone de energia">
                 <span>Também offline</span>
             </li>
@@ -66,6 +76,7 @@
         </ul>
 
     </footer>
+    <script src="./script.js"></script>
 </body>
 
 </html>
